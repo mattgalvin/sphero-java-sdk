@@ -4,7 +4,7 @@
 
 #####*You play with your balls a lot* ~ John Candy, Plains, Trains and Automobiles
 
-A few weeks ago I picked up a Sphero specifically so that I could start writing some code for it.  After getting Fred all trained up (yeah, my kids named it Fred - I have no idea why.  We don't know any Freds.), it was time to grab a cup of Joe and start coding.
+A few weeks ago I picked up a Sphero specifically so that I could start writing some code for it.  After getting Fred all trained up (yeah, my kids named it Fred - I have no idea why.  We don't know any Freds.), it was time to grab a cup of joe and start coding.
 
 Being a predominantly Java guys these days, that was obviously going to be my foundation.  I was kind of surprised that there wasn't an easy to use Java library out there for the Sphero API.  Android, yep; iOS, of course; Windows 8, check; and a slew of others.  But no straightfoward set of Java classes to connect to the ball and get it rolling.  My end goal is to write a Blockly (https://code.google.com/p/blockly/) translator so that my kids can code it directly.  But baby steps first...
 
