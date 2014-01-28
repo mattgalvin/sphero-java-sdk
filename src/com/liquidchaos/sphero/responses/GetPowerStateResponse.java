@@ -59,19 +59,7 @@ public class GetPowerStateResponse extends ResponsePacket {
 	}
 	
 	public String toString() {
-		StringBuffer sb = new StringBuffer();
-		
-		sb.append("Raw Response: ");
-		sb.append(super.toString());
-		
-		sb.append("\nPower State Information:\n");
-		sb.append(String.format("Record Version: %02x\n", getRecordVersion()));
-		sb.append(String.format("Power: %02x\n", getPower()));
-		sb.append(String.format("Battery Voltage: %.2f V\n", getBatteryVoltage()));
-		sb.append(String.format("Number of Charges: %d\n", getNumCharges()));
-		sb.append(String.format("Seconds Since Last Charge: %d\n", getTimeSinceCharge()));
-		
-		return sb.toString();
+		return String.format("[recordVersion: %02x, power: %02x, batteryVoltage: %.2f, numCharges: %d, timeSinceCharg: %d]", getRecordVersion(), getPower(), getBatteryVoltage(), getNumCharges(), getTimeSinceCharge());
 	}
 
 }
