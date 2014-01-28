@@ -12,15 +12,11 @@ public class GetPowerState extends CommandPacket {
 	static final byte CID = 0x20;
 
 	public GetPowerState() {
-		this(false);
+		this((byte)0x00);
 	}
 
-	public GetPowerState(boolean respond) {
-		this(respond, (byte) 0x00);
-	}
-
-	public GetPowerState(boolean respond, byte sequence) {
-		super(respond, DID, CID, sequence);
+	public GetPowerState(byte sequence) {
+		super(true, DID, CID, sequence);
 	}
 
 	public ResponsePacket loadResponse(InputStream input) throws IOException {
