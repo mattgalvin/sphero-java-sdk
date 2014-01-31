@@ -1,20 +1,20 @@
-package com.liquidchaos.sphero;
+package net.liquidchaos.sphero;
 
 import java.io.IOException;
 
+import net.liquidchaos.sphero.bluetooth.SpheroBT;
+import net.liquidchaos.sphero.commands.GetPermanentOptionFlags;
+import net.liquidchaos.sphero.commands.GetPowerState;
+import net.liquidchaos.sphero.commands.Ping;
+import net.liquidchaos.sphero.commands.SetBackLEDOutput;
+import net.liquidchaos.sphero.commands.SetLEDColor;
+import net.liquidchaos.sphero.commands.SetPermanentOptionFlags;
+import net.liquidchaos.sphero.responses.GetPermanentOptionFlagsResponse;
+import net.liquidchaos.sphero.responses.GetPowerStateResponse;
+import net.liquidchaos.sphero.responses.ResponsePacket;
+
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
-
-import com.liquidchaos.sphero.bluetooth.SpheroBT;
-import com.liquidchaos.sphero.commands.GetPermanentOptionFlags;
-import com.liquidchaos.sphero.commands.GetPowerState;
-import com.liquidchaos.sphero.commands.Ping;
-import com.liquidchaos.sphero.commands.SetBackLEDOutput;
-import com.liquidchaos.sphero.commands.SetLEDColor;
-import com.liquidchaos.sphero.commands.SetPermanentOptionFlags;
-import com.liquidchaos.sphero.responses.GetPermanentOptionFlagsResponse;
-import com.liquidchaos.sphero.responses.GetPowerStateResponse;
-import com.liquidchaos.sphero.responses.ResponsePacket;
 
 public class Sphero implements SpheroMessageListener {
 

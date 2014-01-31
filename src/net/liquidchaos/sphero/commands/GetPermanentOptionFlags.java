@@ -1,10 +1,10 @@
-package com.liquidchaos.sphero.commands;
+package net.liquidchaos.sphero.commands;
 
 import java.io.IOException;
 import java.io.InputStream;
 
-import com.liquidchaos.sphero.responses.GetPermanentOptionFlagsResponse;
-import com.liquidchaos.sphero.responses.ResponsePacket;
+import net.liquidchaos.sphero.responses.GetPermanentOptionFlagsResponse;
+import net.liquidchaos.sphero.responses.ResponsePacket;
 
 public class GetPermanentOptionFlags extends CommandPacket {
 

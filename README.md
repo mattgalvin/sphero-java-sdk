@@ -13,7 +13,7 @@ The library should be buildable simply by opening the project in Eclipse (with a
 I've got a separate Eclipse project that I'm using for testing, but the test class is really simple.  Just change the address to your Sphero's bluetooth address and fire it up.  You'll need your OS's implementation of bluecove available at runtime.  The base bluecove library is in the Maven config in the SDK project but you'll need the implementation classes (for instance, on my Debian box I use bluecove-gpl) at runtime.
 
 ```java
-package com.liquidchaos.sphero;
+package net.liquidchaos.sphero;
 
 import java.io.IOException;
 

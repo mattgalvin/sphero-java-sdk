@@ -1,4 +1,4 @@
-package com.liquidchaos.sphero.responses;
+package net.liquidchaos.sphero.responses;
 
 import java.io.IOException;
 import java.io.InputStream;

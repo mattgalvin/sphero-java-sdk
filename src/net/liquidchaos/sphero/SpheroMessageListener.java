@@ -1,8 +1,8 @@
-package com.liquidchaos.sphero;
+package net.liquidchaos.sphero;
 
 import java.util.EventListener;
 
-import com.liquidchaos.sphero.responses.ResponsePacket;
+import net.liquidchaos.sphero.responses.ResponsePacket;
 
 public interface SpheroMessageListener extends EventListener {
 

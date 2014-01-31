@@ -1,10 +1,10 @@
-package com.liquidchaos.sphero.commands;
+package net.liquidchaos.sphero.commands;
 
 import java.io.IOException;
 import java.io.InputStream;
 import java.util.ArrayList;
 
-import com.liquidchaos.sphero.responses.ResponsePacket;
+import net.liquidchaos.sphero.responses.ResponsePacket;
 
 /**
  * This is the base command packet for Sphero v2.0.

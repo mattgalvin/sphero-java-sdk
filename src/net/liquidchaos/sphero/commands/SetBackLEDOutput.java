@@ -1,4 +1,4 @@
-package com.liquidchaos.sphero.commands;
+package net.liquidchaos.sphero.commands;
 
 public class SetBackLEDOutput extends CommandPacket {
 

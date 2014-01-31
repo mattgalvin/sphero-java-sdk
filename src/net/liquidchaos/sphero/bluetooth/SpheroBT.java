@@ -1,4 +1,4 @@
-package com.liquidchaos.sphero.bluetooth;
+package net.liquidchaos.sphero.bluetooth;
 
 import java.io.IOException;
 import java.io.InputStream;
@@ -17,12 +17,12 @@ import javax.bluetooth.UUID;
 import javax.microedition.io.Connector;
 import javax.microedition.io.StreamConnection;
 
+import net.liquidchaos.sphero.SpheroMessageListener;
+import net.liquidchaos.sphero.commands.CommandPacket;
+import net.liquidchaos.sphero.responses.ResponsePacket;
+
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
-
-import com.liquidchaos.sphero.SpheroMessageListener;
-import com.liquidchaos.sphero.commands.CommandPacket;
-import com.liquidchaos.sphero.responses.ResponsePacket;
 
 public class SpheroBT implements DiscoveryListener {
 
