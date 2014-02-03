@@ -3,12 +3,16 @@ package net.liquidchaos.sphero;
 import java.io.IOException;
 
 import net.liquidchaos.sphero.bluetooth.SpheroBT;
+import net.liquidchaos.sphero.commands.GetBluetoothInfo;
 import net.liquidchaos.sphero.commands.GetPermanentOptionFlags;
 import net.liquidchaos.sphero.commands.GetPowerState;
 import net.liquidchaos.sphero.commands.Ping;
 import net.liquidchaos.sphero.commands.SetBackLEDOutput;
+import net.liquidchaos.sphero.commands.SetHeading;
 import net.liquidchaos.sphero.commands.SetLEDColor;
 import net.liquidchaos.sphero.commands.SetPermanentOptionFlags;
+import net.liquidchaos.sphero.commands.SetRoll;
+import net.liquidchaos.sphero.responses.GetBluetoothInfoResponse;
 import net.liquidchaos.sphero.responses.GetPermanentOptionFlagsResponse;
 import net.liquidchaos.sphero.responses.GetPowerStateResponse;
 import net.liquidchaos.sphero.responses.ResponsePacket;
@@ -22,6 +26,7 @@ public class Sphero implements SpheroMessageListener {
 	
 	SpheroBT spheroBT;
 	
+	GetBluetoothInfoResponse bluetoothInfo;
 	GetPowerStateResponse powerState;
 	GetPermanentOptionFlagsResponse permanentOptions;
 
@@ -29,16 +34,26 @@ public class Sphero implements SpheroMessageListener {
 		spheroBT = new SpheroBT(spheroAddress);
 		spheroBT.connect();
 		
+		getBluetoothInfo();
 		getPowerState();
 		getPermanentOptionFlags();
 
 		logger.info("Sphero connected");
+		logger.info(String.format("Bluetooth Info: %s", bluetoothInfo));
 		logger.info(String.format("Power: %s", powerState));
 		logger.info(String.format("Options Flags: %s", permanentOptions));
 	}
 	
 	public void ping() throws IOException {
 		spheroBT.sendCommand(new Ping());
+	}
+	
+	public void setHeading(short heading) throws IOException {
+		spheroBT.sendCommand(new SetHeading(heading));
+	}
+	
+	public void setRoll(byte speed, short heading, byte state) throws IOException {
+		spheroBT.sendCommand(new SetRoll(speed, heading, state));
 	}
 	
 	public void setLEDColor(byte red, byte green, byte blue, boolean persist) throws IOException {
@@ -48,13 +63,21 @@ public class Sphero implements SpheroMessageListener {
 	public void setBackLEDOutput(byte level) throws IOException {
 		spheroBT.sendCommand(new SetBackLEDOutput(level));
 	}
-	
-	public void getPowerState() throws IOException {
+
+	public GetBluetoothInfoResponse getBluetoothInfo() throws IOException {
+		if (bluetoothInfo == null) {
+			bluetoothInfo = (GetBluetoothInfoResponse)spheroBT.sendCommand(new GetBluetoothInfo());
+		}
+		return bluetoothInfo;
+	}
+	public GetPowerStateResponse getPowerState() throws IOException {
 		powerState = (GetPowerStateResponse) spheroBT.sendCommand(new GetPowerState());
+		return powerState;
 	}
 
-	public void getPermanentOptionFlags() throws IOException {
+	public GetPermanentOptionFlagsResponse getPermanentOptionFlags() throws IOException {
 		permanentOptions = (GetPermanentOptionFlagsResponse) spheroBT.sendCommand(new GetPermanentOptionFlags());
+		return permanentOptions;
 	}
 	
 	/**
