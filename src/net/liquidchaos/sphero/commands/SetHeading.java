@@ -28,7 +28,6 @@ public class SetHeading extends CommandPacket {
 	}
 
 	private void setPacketData() {
-//		byte[] payload = { (byte)heading, (byte) (heading >> 8) };
 		byte[] payload = { (byte) (heading >> 8), (byte) heading };
 
 		setData(payload);

@@ -44,7 +44,6 @@ public class SetRoll extends CommandPacket {
 	}
 
 	private void setPacketData() {
-//		byte[] payload = { speed, (byte)heading, (byte) (heading >> 8), state };
 		byte[] payload = { speed, (byte)(heading >> 8), (byte)heading, state };
 
 		setData(payload);
